@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日常笔记 · 乐鱼体育</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f6fafb;
+            color: #1e2b2f;
+            line-height: 1.6;
+            padding: 0 1rem 3rem;
+        }
+
+        .page-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1.5rem 0.5rem;
+        }
+
+        /* hero 开场短句 */
+        .hero-tag {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            color: #1b7b7a;
+            background: #e0f0ef;
+            display: inline-block;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 1.3;
+            color: #0f3b3a;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.3px;
+        }
+
+        .hero-title strong {
+            font-weight: 560;
+            color: #115e5d;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: #3a575a;
+            max-width: 680px;
+            margin-bottom: 2rem;
+            border-left: 3px solid #47b5b0;
+            padding-left: 1rem;
+            background: rgba(71, 181, 176, 0.06);
+            border-radius: 0 6px 6px 0;
+        }
+
+        /* 承接段落——日常与对照 */
+        .narrative-block {
+            background: white;
+            padding: 1.8rem 1.5rem;
+            border-radius: 24px;
+            box-shadow: 0 4px 12px rgba(0, 40, 40, 0.04);
+            margin: 2rem 0 2.2rem;
+        }
+
+        .narrative-block p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+
+        .narrative-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .inline-link {
+            color: #197a78;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #b5dbd9;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .inline-link:hover {
+            border-bottom-color: #197a78;
+            background: #e2f3f2;
+        }
+
+        /* 网格卡片 (特点列表) */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2.2rem 0;
+        }
+
+        .feat-card {
+            background: white;
+            padding: 1.2rem 1rem 1rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 50, 50, 0.02);
+            border: 1px solid #deedec;
+            transition: transform 0.15s, box-shadow 0.2s;
+        }
+
+        .feat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(30, 90, 90, 0.06);
+            border-color: #b7dbd9;
+        }
+
+        .feat-card h3 {
+            font-size: 1rem;
+            font-weight: 550;
+            color: #115353;
+            margin-bottom: 0.35rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .feat-card h3::before {
+            content: "◈";
+            color: #47b5b0;
+            font-size: 0.9rem;
+            margin-right: 0.2rem;
+        }
+
+        .feat-card p {
+            font-size: 0.92rem;
+            color: #2e4b4d;
+            line-height: 1.5;
+        }
+
+        /* 场景段落 (延伸阅读感) */
+        .scenario-note {
+            background: #e8f3f2;
+            border-radius: 40px 16px 16px 40px;
+            padding: 1.6rem 1.6rem;
+            margin: 2rem 0 1.8rem;
+            border-left: 5px solid #359b96;
+        }
+
+        .scenario-note p {
+            font-size: 0.98rem;
+            color: #1b4547;
+        }
+
+        .scenario-note strong {
+            color: #0f5f5c;
+            font-weight: 550;
+        }
+
+        /* FAQ 摘要 + 温和结尾 */
+        .faq-cluster {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 2rem 0 1.5rem;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 60px;
+            padding: 0.5rem 1.3rem 0.5rem 1.1rem;
+            font-size: 0.9rem;
+            border: 1px solid #cae0de;
+            color: #1f494a;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .faq-item span {
+            background: #47b5b0;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.2rem;
+        }
+
+        .closing-note {
+            margin-top: 2.5rem;
+            padding: 1rem 0.2rem;
+            border-top: 1px solid #c5dbda;
+            font-size: 0.95rem;
+            color: #316466;
+            text-align: left;
+        }
+
+        .closing-note a {
+            color: #197a78;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #96c5c2;
+        }
+
+        .closing-note a:hover {
+            border-bottom-style: solid;
+            background: #dcf0ee;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 540px) {
+            .hero-title {
+                font-size: 1.6rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+            .narrative-block {
+                padding: 1.4rem 1.2rem;
+            }
+            .faq-cluster {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .faq-item {
+                border-radius: 30px;
+                justify-content: flex-start;
+            }
+            .scenario-note {
+                border-radius: 24px;
+                border-left-width: 4px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero-title {
+                font-size: 1.4rem;
+            }
+            body {
+                padding-left: 0.6rem;
+                padding-right: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <!-- 开场短句 -->
+    <div class="hero-tag">◈ 日常翻阅 · 延伸笔记</div>
+    <h1 class="hero-title">对照、翻阅与<br><strong>一点延伸</strong></h1>
+    <div class="hero-desc">
+        偶尔会打开一个站点，不是为了搜索什么，只是想顺着列表一条条看下去。<br>
+        像是翻一本旧手册，信息整齐，节奏刚好。
+    </div>
+
+    <!-- 承接段落：日常查询与对照 -->
+    <div class="narrative-block">
+        <p>
+            有时候遇到一个不熟悉的分类，或者想核对某个条目下的细节，我会习惯先打开<strong>乐鱼体育</strong>的页面当作参照。它里面的条目排列很清晰，把不同方向的内容单独分块，读起来不用费力跳来跳去。
+        </p>
+        <p>
+            比如体育相关的模块，既有概括性的介绍，也会列一些更细的分支。对于日常写东西或者做对比的人来说，这样的结构其实挺省时间。不用一边看一边自己整理，它已经帮你分好了。
+        </p>
+        <p>
+            当然，每个人的关注点不一样。对我来说，<a href="https://mindex-leyu.com.cn" class="inline-link">乐鱼体育</a>更像一个可以随时停下来参照的索引。不需要每次都从头翻，只要定位到自己感兴趣的那一块，前后对照几眼，心里就有数了。
+        </p>
+    </div>
+
+    <!-- 特点网格卡片 -->
+    <div class="feature-grid">
+        <div class="feat-card">
+            <h3>分类干净</h3>
+            <p>体育项目、赛事信息、相关动态各自成块，浏览时不容易混淆，也方便直接取用。</p>
+        </div>
+        <div class="feat-card">
+            <h3>条目齐整</h3>
+            <p>每个模块下的内容都有明确的标题和分段，即使快速扫读也能抓住重点。</p>
+        </div>
+        <div class="feat-card">
+            <h3>没有冗余</h3>
+            <p>页面里很少出现大段无关的装饰性文字，信息密度控制得比较舒服。</p>
+        </div>
+        <div class="feat-card">
+            <h3>便于对照</h3>
+            <p>如果想同时看几个不同方向的介绍，左右对照或者上下翻页都很顺畅。</p>
+        </div>
+    </div>
+
+    <!-- 场景段落：延伸阅读 -->
+    <div class="scenario-note">
+        <p>
+            <strong>一个常见的场景：</strong>整理运动相关的素材时，需要确认某个项目的常见分类或背景说明。这时候直接打开页面，找到对应的区域，复制或记下关键点就好。如果还想了解邻近的条目，顺手往下翻一翻，往往也能找到关联内容。这种延伸式的阅读不会让人迷失，因为每个模块的边界很清楚。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要风格 -->
+    <div class="faq-cluster">
+        <div class="faq-item"><span>?</span> 页面内容会频繁更新吗？</div>
+        <div class="faq-item"><span>?</span> 移动端浏览体验怎么样？</div>
+        <div class="faq-item"><span>?</span> 目录结构容易上手吗？</div>
+        <div class="faq-item"><span>?</span> 与其他信息源对比如何？</div>
+    </div>
+
+    <!-- 温和结尾，再次自然嵌入链接 -->
+    <div class="closing-note">
+        <p>
+            如果你也在找一个可以随时打开、安静对照的页面，或许可以试试把&nbsp;<a href="https://mindex-leyu.com.cn">乐鱼体育</a>&nbsp;放进书签。不需要特意安排时间，只需要在偶尔想查点什么、翻点什么的时候，点开，然后顺着自己的节奏看下去就好。
+        </p>
+        <p style="margin-top: 0.6rem; color: #487a78; font-size: 0.85rem; letter-spacing: 0.2px;">
+            —— 记于一次日常翻阅
+        </p>
+    </div>
+</div>
+</body>
+</html>
