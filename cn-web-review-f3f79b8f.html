@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>悟空体育 · 简明指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Georgia', 'Noto Serif SC', 'Source Han Serif', serif;
+      background-color: #faf8f5;
+      color: #2c2b28;
+      line-height: 1.75;
+      padding: 2.4rem 1.2rem;
+    }
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #fefcf9;
+      border-radius: 20px;
+      padding: 3rem 2.2rem 3.6rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03), 0 8px 24px rgba(0,0,0,0.02);
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #1f1e1c;
+      border-left: 4px solid #b7a58a;
+      padding-left: 1.1rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    .meta {
+      font-size: 0.9rem;
+      color: #9b958b;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #ede8df;
+      padding-bottom: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+    .meta span {
+      background: #f2ede6;
+      padding: 0.15rem 0.7rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      color: #6b645a;
+    }
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 500;
+      margin: 2rem 0 0.8rem;
+      color: #3b3833;
+      border-bottom: 1px dashed #ddd7cd;
+      padding-bottom: 0.2rem;
+    }
+    p {
+      margin-bottom: 1.25rem;
+      text-align: justify;
+      word-break: break-word;
+    }
+    .intro {
+      font-size: 1.1rem;
+      color: #3f3c37;
+      background: #f6f2ec;
+      padding: 1.4rem 1.6rem;
+      border-radius: 14px;
+      margin: 1.5rem 0 2rem;
+      border-left: 5px solid #b7a58a;
+    }
+    .quote-note {
+      background: #f3efe9;
+      border-left: 6px solid #b7a58a;
+      padding: 1.2rem 1.6rem;
+      border-radius: 0 12px 12px 0;
+      margin: 1.8rem 0;
+      font-size: 0.98rem;
+      color: #3f3a33;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .quote-note strong {
+      color: #574f44;
+      font-weight: 600;
+    }
+    .highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.5rem 0 1.8rem;
+    }
+    .hl-item {
+      flex: 1 1 200px;
+      background: #f8f5f0;
+      padding: 1rem 1.3rem;
+      border-radius: 14px;
+      border: 1px solid #e8e0d6;
+    }
+    .hl-item .num {
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: #b7a58a;
+      line-height: 1;
+    }
+    .hl-item h4 {
+      font-weight: 500;
+      margin: 0.3rem 0 0.4rem;
+      color: #2f2c28;
+    }
+    .hl-item p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      color: #5c5650;
+    }
+    .faq-mini {
+      margin: 2rem 0 1.5rem;
+      border-top: 1px solid #ede8df;
+      padding-top: 1.8rem;
+    }
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+    .faq-item q {
+      font-weight: 500;
+      color: #3b3833;
+      display: block;
+      margin-bottom: 0.3rem;
+      font-style: normal;
+    }
+    .faq-item p {
+      margin-bottom: 0.3rem;
+      font-size: 0.95rem;
+      color: #4d4842;
+    }
+    .footer-note {
+      border-top: 1px solid #ede8df;
+      padding-top: 1.5rem;
+      margin-top: 1.8rem;
+      font-size: 0.95rem;
+      color: #5f5850;
+    }
+    a {
+      color: #7f6d56;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #cbc1b3;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #4d3f30;
+      text-decoration-color: #7f6d56;
+    }
+    .tag {
+      display: inline-block;
+      background: #e2dcd3;
+      color: #3f3a33;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      letter-spacing: 0.3px;
+      margin-right: 0.4rem;
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .page {
+        padding: 2rem 1.2rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+        padding-left: 0.9rem;
+      }
+      .intro {
+        padding: 1rem 1.2rem;
+      }
+      .quote-note {
+        padding: 1rem 1.2rem;
+      }
+      .hl-item {
+        flex: 1 1 100%;
+      }
+      .meta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <h1>简明指南：悟空体育的访问与使用</h1>
+  <div class="meta">
+    <span>切入角度 · 访问提醒</span>
+    <span>更新 · 2025 · 简洁版</span>
+  </div>
+
+  <p>
+    在数字体育平台的选择中，信息密度与入口可靠性始终是首要考量。<strong>悟空体育</strong>提供了赛事数据、实时动态及社区交互等模块，本文从实际使用角度梳理几项关键提示，帮助新用户快速建立操作框架。
+  </p>
+
+  <div class="intro">
+    <strong>核心建议：</strong> 无论通过何种方式访问，始终确认域名指向 <strong>cn-web-wukong.com</strong>，并留意浏览器地址栏中的证书与拼写细节。下文将进一步说明常见场景与要点。
+  </div>
+
+  <h2>访问前提与链接识别</h2>
+  <p>
+    平台唯一受推荐的访问入口是 <a href="https://cn-web-wukong.com">悟空体育</a>。请手动输入或通过收藏夹直达，避免使用未经验证的第三方搜索结果或短链。日常使用中，建议将页面添加至浏览器书签栏，以降低误入仿冒页面的概率。
+  </p>
+  <p>
+    部分用户反映在移动端或公共网络环境下可能出现跳转延迟，此时可尝试刷新或切换网络环境（如从 Wi-Fi 切换至移动数据），同时核对域名是否仍为 cn-web-wukong.com。
+  </p>
+
+  <div class="quote-note">
+    <strong>提示：</strong> 任何要求提供账户密码、短信验证码或钱包私钥的“客服”或“活动页面”均与 <a href="https://cn-web-wukong.com">悟空体育</a> 无关。官方不会通过非站内渠道索取敏感信息。
+  </div>
+
+  <h2>功能特点摘要</h2>
+  <div class="highlights">
+    <div class="hl-item">
+      <div class="num">01</div>
+      <h4>赛事覆盖</h4>
+      <p>包含足球、篮球、网球等主流联赛数据，以及电竞与虚拟体育的实时资讯。</p>
+    </div>
+    <div class="hl-item">
+      <div class="num">02</div>
+      <h4>界面简洁</h4>
+      <p>功能分区清晰，数据展示采用卡片式布局，减少冗余信息干扰。</p>
+    </div>
+    <div class="hl-item">
+      <div class="num">03</div>
+      <h4>多端适配</h4>
+      <p>桌面与移动端均保持一致的浏览体验，无需额外下载专用客户端。</p>
+    </div>
+  </div>
+
+  <h2>常见操作场景</h2>
+  <p>
+    初次使用：打开 <a href="https://cn-web-wukong.com">悟空体育</a> 后，可先浏览当日热门赛事列表，点击任意赛事即可查看赔率变化、交锋记录及技术统计。注册流程仅需邮箱或手机号，建议使用常用且可接收验证码的账号。
+  </p>
+  <p>
+    数据查询：平台提供历史数据回溯功能，支持按联赛、日期或队伍名称筛选。如需导出数据，可尝试通过页面内“下载表格”按钮（部分模块支持），格式通常为 CSV。
+  </p>
+
+  <div class="faq-mini">
+    <h2 style="border-bottom: none; margin-top: 0;">FAQ 摘要</h2>
+    <div class="faq-item">
+      <q>是否需要注册才能查看数据？</q>
+      <p>浏览基础赛事数据和赔率无需注册，但参与社区讨论或开通提醒功能需创建账户。</p>
+    </div>
+    <div class="faq-item">
+      <q>页面加载缓慢怎么办？</q>
+      <p>优先检查网络连接；可尝试关闭 VPN 或代理再访问 <a href="https://cn-web-wukong.com">悟空体育</a>，部分线路可能影响资源加载。</p>
+    </div>
+    <div class="faq-item">
+      <q>如何确认当前访问的是正版站？</q>
+      <p>地址栏域名必须为 cn-web-wukong.com，且页面底部包含清晰的版权标识与联系方式。</p>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <span class="tag">访问提醒</span> 本文仅作为使用参考，不构成任何投资或投注建议。所有操作请以平台实际页面为准，理性决策。
+  </div>
+</div>
+</body>
+</html>
