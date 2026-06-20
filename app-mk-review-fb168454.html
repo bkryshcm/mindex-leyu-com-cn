@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK体育 · 知识库入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f7f4ef;
+            font-family: 'Georgia', 'Times New Roman', '宋体', serif;
+            line-height: 1.7;
+            color: #3c3a37;
+            padding: 2rem 1.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 810px;
+            width: 100%;
+            background: #fcfaf6;
+            padding: 2.5rem 2.2rem;
+            border-radius: 18px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        /* 文章排版基调 */
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-left: 5px solid #c7b9a8;
+            padding-left: 1.2rem;
+            margin-bottom: 1.8rem;
+            color: #2f2b27;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-top: 2.2rem;
+            margin-bottom: 0.8rem;
+            color: #4e4842;
+            border-bottom: 1px dashed #dcd4ca;
+            padding-bottom: 0.3rem;
+        }
+
+        p {
+            margin: 1rem 0 1.2rem 0;
+            font-size: 1.05rem;
+        }
+
+        /* 引用 / 提示框 — 米白柔角 */
+        .notice-box {
+            background: #f0ece5;
+            padding: 1.4rem 1.8rem;
+            border-radius: 12px;
+            border-left: 6px solid #a79684;
+            margin: 1.8rem 0;
+            color: #45403a;
+            font-size: 0.98rem;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        .notice-box strong {
+            color: #5d5348;
+            font-weight: 600;
+        }
+
+        /* 目录感布局 – 卡片网格 */
+        .index-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 1.5rem 1.2rem;
+            margin: 1.2rem 0 1.6rem;
+        }
+
+        .index-card {
+            background: #f8f5f0;
+            padding: 1.2rem 1rem;
+            border-radius: 14px;
+            border: 1px solid #e6dfd6;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            transition: background 0.2s;
+        }
+
+        .index-card:hover {
+            background: #ede7df;
+        }
+
+        .index-card .label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #9b8d7c;
+            margin-bottom: 0.4rem;
+        }
+
+        .index-card .entry {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #3f3a35;
+        }
+
+        .index-card .entry a {
+            color: #3f3a35;
+            text-decoration: none;
+        }
+
+        .index-card .entry a:hover {
+            text-decoration: underline;
+            color: #7d6b58;
+        }
+
+        .index-card .desc {
+            font-size: 0.9rem;
+            color: #67605a;
+            margin-top: 0.4rem;
+            line-height: 1.5;
+        }
+
+        /* 相关信息区 – 简洁列表 */
+        .related-box {
+            background: #f3efe9;
+            padding: 1.2rem 1.6rem;
+            border-radius: 14px;
+            margin-top: 1.8rem;
+        }
+
+        .related-box h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #4f4841;
+            margin-bottom: 0.6rem;
+        }
+
+        .related-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .related-box li {
+            padding: 0.4rem 0;
+            border-bottom: 1px dotted #dbd2c8;
+            font-size: 0.98rem;
+            color: #4d4741;
+        }
+
+        .related-box li:last-child {
+            border-bottom: none;
+        }
+
+        .related-box li::before {
+            content: "·";
+            color: #a18d79;
+            font-weight: bold;
+            display: inline-block;
+            width: 1.2rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e1d9cf;
+            margin: 2.2rem 0 1rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9d958b;
+            margin-top: 2.2rem;
+        }
+
+        a {
+            color: #7b6b5a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 0.5px;
+        }
+
+        a:hover {
+            color: #a18d78;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+                padding-left: 0.8rem;
+            }
+            .index-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero 说明区 -->
+    <h1>再次回到这里</h1>
+    <p style="font-size:1.1rem; margin-bottom:0.5rem;">
+        每次打开都像翻开一本标记过的书页。如果你曾访问过 <a href="https://app--mk.com">MK体育</a>，
+        或许会注意到它的信息层次总是在悄悄迭代——不是那种突兀的改版，而是更体贴的整理。
+    </p>
+    <p>
+        这便是一个知识库入口式页面，把那些值得一再回看的内容、提示与关联信息，用目录感的方式摆在你面前。
+        不需要刻意记住什么，只要知道它一直在这里。
+    </p>
+
+    <!-- 提示区 / 引用块 -->
+    <div class="notice-box">
+        <strong>📌 来自常客的建议</strong><br>
+        如果你上一次造访 <a href="https://app--mk.com">MK体育</a> 已经超过两周，
+        不妨把此页加入浏览器书签。很多实用内容会随着赛季与资讯节奏慢慢沉淀，
+        收藏之后，下次回来时就不必从头翻找。
+    </div>
+
+    <!-- 目录感布局：特点 / 场景卡片 -->
+    <h2>📋 你也许想留意这些</h2>
+    <div class="index-grid">
+        <div class="index-card">
+            <div class="label">导航</div>
+            <div class="entry"><a href="https://app--mk.com">MK体育</a></div>
+            <div class="desc">直接回到主知识库，所有分类和更新都在那里。</div>
+        </div>
+        <div class="index-card">
+            <div class="label">收藏</div>
+            <div class="entry">书签栏</div>
+            <div class="desc">把链接存到收藏夹，下次访问省去搜索步骤。</div>
+        </div>
+        <div class="index-card">
+            <div class="label">节奏</div>
+            <div class="entry">持续关注</div>
+            <div class="desc">信息流会自然更替，偶尔回看会有新发现。</div>
+        </div>
+        <div class="index-card">
+            <div class="label">提醒</div>
+            <div class="entry">页面变化</div>
+            <div class="desc">结构可能微调，但入口始终是同一处。</div>
+        </div>
+    </div>
+
+    <!-- 说明区：再次访问与收藏 -->
+    <h2>🔖 为什么要再次访问</h2>
+    <p>
+        网络上的信息总在流动，但有些站点值得被固定下来。<strong>MK体育</strong> 不是那种一次消费的页面——
+        它像一本不断增补的手册，每过一段时间，你都会发现原先忽略的角落被重新梳理过。
+        目录感布局的目的正是让你能快速定位自己上次读到哪里，或者从哪个新标签开始。
+    </p>
+    <p>
+        收藏的动作，本质上是给自己留一条从容的路径。当你想起某个话题、某条分析或某个数据，
+        不必重新搜索，只需打开书签，直接回到 <a href="https://app--mk.com">MK体育</a>，
+        就像推开一扇熟悉的门。
+    </p>
+
+    <!-- 相关信息区 -->
+    <div class="related-box">
+        <h3>📎 相关信息</h3>
+        <ul>
+            <li>内容类型涵盖赛事观察、训练笔记、术语整理与历史档案</li>
+            <li>页面不定期更新，但会保留过往重要版本说明</li>
+            <li>无弹窗、无强制跳转，浏览体验接近纸质读本</li>
+            <li>建议每两到三周回来一次，积累的细节会更有层次</li>
+        </ul>
+    </div>
+
+    <!-- FAQ 摘要（简约风格） -->
+    <h2 style="margin-top:2.6rem;">❓ 常见问题摘要</h2>
+    <p>
+        <strong>页面会经常变吗？</strong> 不会频繁变动，但目录和部分卡片会随信息整理而调整，总体入口稳定。
+    </p>
+    <p>
+        <strong>需要注册才能浏览吗？</strong> 不用。直接打开 <a href="https://app--mk.com">MK体育</a> 即可阅读大部分内容，无需登录。
+    </p>
+    <p>
+        <strong>如果忘记之前的阅读位置怎么办？</strong> 不妨从卡片式目录重新扫一遍，通常几分钟就能找到熟悉的板块。
+    </p>
+
+    <!-- 温和的收尾 -->
+    <hr>
+    <div class="footer-note">
+        保持关注 · 慢慢翻阅<br>
+        <span style="font-size:0.8rem; color:#bfb4a7;">收录与整理总在持续</span>
+    </div>
+
+</div>
+</body>
+</html>
